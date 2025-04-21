@@ -204,9 +204,10 @@ app.get('/api/historical', async (req, res) => {
 });
 
 // Catch-all route to serve index.html for any other routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'index.html'));
+// });
+
 
 // Start the server
 app.listen(PORT, () => {
