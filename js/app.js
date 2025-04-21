@@ -170,7 +170,7 @@ const fallbackData = {
                   // Try to fetch from API
                   if (useProxyServer) {
                       // Use proxy server
-                      const response = await fetch('/api/prices');
+                      const response = await fetch('https://gold-prices-api-yopr.onrender.com/api/prices');
                       if (!response.ok) {
                           throw new Error('Failed to fetch from proxy server');
                       }
