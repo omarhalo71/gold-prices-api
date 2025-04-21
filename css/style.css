@@ -1,0 +1,363 @@
+/* Updated style.css with navy to gold gradient instead of purple to gold */
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #464646; /* Navy blue */
+    --secondary-color: #161f3a; /* Gold */
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --border-color: #dee2e6;
+    --price-up: #28a745;
+    --price-down: #dc3545;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    direction: rtl;
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+}
+
+#last-update {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    font-weight: 700;
+    padding: 15px;
+    border-bottom: none;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: 700;
+    background-color: rgba(0, 31, 63, 0.05); /* Light navy */
+    border-top: none;
+}
+
+.price-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.price-badge-up {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--price-up);
+}
+
+.price-badge-down {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--price-down);
+}
+
+.price-change-arrow {
+    margin-left: 5px;
+}
+
+.price-up {
+    color: var(--price-up);
+}
+
+.price-down {
+    color: var(--price-down);
+}
+
+.converter-card {
+    background: linear-gradient(135deg, rgba(0, 31, 63, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+    border: 1px solid var(--border-color);
+}
+
+.converter-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.converter-icon {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.converter-result {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(212, 175, 55, 0.1);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.chart-container {
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.chart-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.chart-icon {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.period-selector {
+    margin-bottom: 15px;
+}
+
+.period-selector .btn {
+    margin-right: 5px;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.period-selector .btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.gold-icon, .currency-icon, .metal-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 31, 63, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--secondary-color);
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.price-refresh {
+    animation: highlight 1s ease-out;
+}
+
+@keyframes highlight {
+    0% { background-color: rgba(212, 175, 55, 0.2); }
+    100% { background-color: transparent; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-header {
+        padding: 10px;
+    }
+    
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+    
+    .price-badge {
+        padding: 3px 6px;
+        font-size: 0.8rem;
+    }
+    
+    .converter-result {
+        font-size: 1.2rem;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gold-icon, .currency-icon, .metal-icon {
+        width: 25px;
+        height: 25px;
+        margin-left: 5px;
+    }
+    
+    .table th, .table td {
+        padding: 0.3rem;
+        font-size: 0.9rem;
+    }
+    
+    .price-badge {
+        padding: 2px 5px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Mobile app specific styles */
+.mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.mobile-nav-item i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.mobile-nav-item.active {
+    color: var(--secondary-color);
+}
+
+.mobile-nav-item.active i {
+    color: var(--secondary-color);
+}
+
+.pull-to-refresh {
+    text-align: center;
+    padding: 10px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.splash-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.splash-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.connection-status {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    text-align: center;
+    font-size: 0.8rem;
+    z-index: 1500;
+    transition: all 0.3s ease;
+}
+
+.connection-status.online {
+    background-color: var(--price-up);
+    color: white;
+    transform: translateY(-100%);
+}
+
+.connection-status.offline {
+    background-color: var(--price-down);
+    color: white;
+    transform: translateY(0);
+}
+
+.table>:not(caption)>*>* {
+    padding: .5rem .5rem;
+    color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
+    background-color: var(--bs-table-bg);
+    border-bottom-width: var(--bs-border-width);
+    box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)));
+}header {
+    box-shadow: var(--box-shadow);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+.last-update-badge{
+    color: white;
+}
